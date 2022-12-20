@@ -29,6 +29,7 @@ banner = '''
 
 
 
+
 try:
     os.system('cls')
     config = open('config.json')
@@ -38,7 +39,7 @@ try:
 
     options = Options()
     options.page_load_strategy = 'eager'
-    options.headless = False
+    options.headless = True
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_experimental_option("detach", True)
@@ -68,9 +69,12 @@ try:
             password_field.send_keys(data["password"])
             sign_in = driver.find_element(By.XPATH, '//*[@id="allow"]')
             sign_in.click()
+            os.system('cls')
+            print(Colorate.Color(Colors.cyan, banner, True))
             sleep(2)
             if 'twitter.com' in driver.current_url:
                 print(Colorate.Color(Colors.red, 'Invalid credentials (Check "config.json"...', True))
+                
             if driver.current_url != 'https://twiends.com/home':
                 driver.get('https://twiends.com/home')
                 if driver.current_url == 'https://twiends.com/home':
@@ -100,8 +104,10 @@ try:
         sleep(2)
         driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[12]/div/div[2]/code').click()
         sleep(2)
+        
         driver.find_element(By.XPATH, f'//*[@id="Refresh"]').click()
         sleep(5)
+        
                         
 except Exception:
     driver.find_element(By.XPATH, f'//*[@id="Refresh"]').click()
