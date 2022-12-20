@@ -6,9 +6,27 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
 from time import sleep
+import sys
 
 import os
 import json
+
+
+
+banner = '''
+
+
+    ████████╗░██╗░░░░░░░██╗██╗███████╗███╗░░██╗██████╗░░██████╗
+    ╚══██╔══╝░██║░░██╗░░██║██║██╔════╝████╗░██║██╔══██╗██╔════╝
+    ░░░██║░░░░╚██╗████╗██╔╝██║█████╗░░██╔██╗██║██║░░██║╚█████╗░
+    ░░░██║░░░░░████╔═████║░██║██╔══╝░░██║╚████║██║░░██║░╚═══██╗
+    ░░░██║░░░░░╚██╔╝░╚██╔╝░██║███████╗██║░╚███║██████╔╝██████╔╝
+    ░░░╚═╝░░░░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═╝░░╚══╝╚═════╝░╚═════╝░
+                            b̷y̷ u̷n̷o̷f̷f̷i̷c̷i̷a̷l̷d̷x̷n̷n̷y̷
+
+'''
+
+
 
 
 try:
@@ -32,7 +50,9 @@ try:
     ## driver.maximize_window()
     wait = WebDriverWait(driver, 100)
     os.system('cls')    
-
+    
+    print(Colorate.Color(Colors.cyan, banner, True))
+    
     sleep(2)    
     
 
@@ -49,6 +69,8 @@ try:
             sign_in = driver.find_element(By.XPATH, '//*[@id="allow"]')
             sign_in.click()
             sleep(2)
+            if 'twitter.com' in driver.current_url:
+                print(Colorate.Color(Colors.red, 'Invalid credentials (Check "config.json"...', True))
             if driver.current_url != 'https://twiends.com/home':
                 driver.get('https://twiends.com/home')
                 if driver.current_url == 'https://twiends.com/home':
@@ -79,7 +101,7 @@ try:
         driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[12]/div/div[2]/code').click()
         sleep(2)
         driver.find_element(By.XPATH, f'//*[@id="Refresh"]').click()
-        sleep(10)
+        sleep(5)
                         
 except Exception:
     driver.find_element(By.XPATH, f'//*[@id="Refresh"]').click()
