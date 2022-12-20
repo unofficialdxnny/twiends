@@ -54,7 +54,7 @@ try:
                 if driver.current_url == 'https://twiends.com/home':
                     driver.refresh()
                 
-    while True:
+    for x in range(35):
         sleep(5)
         driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[2]/div/div[2]/code').click()
         sleep(2)
