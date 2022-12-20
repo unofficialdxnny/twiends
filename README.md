@@ -20,3 +20,8 @@ pip install -r REQUIREMENTS.TXT
 ```
 python main.py
 ```
+
+## ToDo
+
+- Record who the script follows
+This will be useful for the second script which will be used to unfollow all the random people you followed.
