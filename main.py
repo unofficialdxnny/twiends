@@ -22,8 +22,8 @@ options.headless = False
 options.add_argument('--disable-blink-features=AutomationControlled')
 options.add_argument('--disable-blink-features=AutomationControlled')
 options.add_argument("--log-level=3")
-driver = webdriver.Chrome(options=options, service_args=["--verbose", "--log-path=D:\\qc1.log"]) ## Initialise the driver
-driver.get("https://accounts.snapchat.com/accounts/login") ## login to snapchat
+driver = webdriver.Chrome(executable_path='./chromedriver.exe', options=options, service_args=["--verbose", "--log-path=D:\\qc1.log"]) ## Initialise the driver
+driver.get("https://twiends.com/") ## Login
 ## driver.maximize_window()
 wait = WebDriverWait(driver, 100)
 
