@@ -14,6 +14,17 @@ git clone https://github.com/unofficialdxnny/twiends.git
 ```
 cd twiends
 ```
+```json
+
+You will need to put in your Twitter details here so we can login to the website.
+
+{
+    "username": "",
+    "password": ""
+}
+```
+
+
 ```
 pip install -r REQUIREMENTS.TXT
 ```
