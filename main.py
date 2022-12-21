@@ -1,3 +1,13 @@
+"""
+Twitter Followers script written in python.
+This script automates the twiends website to surpass the hustle
+of clicking the follow button upto 400 times.
+
+By @unofficialdxnny (Danial Ahmed)
+
+
+"""
+
 from pystyle import *
 from selenium import webdriver
 from selenium.webdriver.common.by import By
