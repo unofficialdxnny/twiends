@@ -1,13 +1,3 @@
-"""
-Twitter Followers script written in python.
-This script automates the twiends website to surpass the hustle
-of clicking the follow button upto 400 times.
-
-By @unofficialdxnny (Danial Ahmed)
-
-
-NOTE THIS SCRIPT DOESNT WORK AS INTENDED. USE "latest.py" start a UI script.
-"""
 
 from pystyle import *
 from selenium import webdriver
@@ -18,6 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
 from time import sleep
 import sys
+import keyboard as kb
 
 import os
 import json
@@ -63,69 +54,38 @@ os.system('cls')
 
 print(Colorate.Color(Colors.cyan, banner, True))
 
-sleep(10)    
-
-if driver.current_url == 'https://twiends.com/':
-    print(Colorate.Color(Colors.green, 'Loading Up...', True))
-    sign_in_with_twitter = driver.find_element(By.XPATH, '//*[@id="body"]/div[2]/div/div/div[2]/div[2]/div/a')
-    sign_in_with_twitter.click()
-    if 'https://api.twitter.com/' in driver.current_url:
-        print(Colorate.Color(Colors.green, 'Attempting to login...', True))
-        sleep(2)
-        s_in = driver.find_element(By.XPATH, '//*[@id="allow"]').click()
-        
-        if 'twitter.com/i/' in driver.current_url:
-            sleep(3)
-            email_field = driver.find_element(By.XPATH, '//*[@id="react-root"]/div/div/div/main/div/div/div/div[2]/div[2]/div/div[5]/label/div/div[2]/div/input')
+input('Press "enter" when you have logged into site with Twitter...')
+print(Colorate.Color(Colors.green, 'Starting Script...', True))
+sleep(5)
+if driver.current_url != 'https://twiends.com/home':
+    driver.get('https://twiends.com/home')
+    if driver.current_url == 'https://twiends.com/home':
+        driver.refresh()
             
-            email_field.send_keys(data["username"])
-            
-            password_field = driver.find_element(By.XPATH, '//*[@id="react-root"]/div/div/div/main/div/div/div/div[2]/div[2]/div[1]/div/div/div/div[3]/div/label/div/div[2]/div[1]/input')
-            
-            
-            password_field.send_keys(data["password"])
-            
-            
-            sign_in = driver.find_element(By.XPATH, '//*[@id="react-root"]/div/div/div/main/div/div/div/div[2]/div[2]/div[2]/div/div/div[1]/div/div/div')
-            
-            sign_in.click()
-            
-            os.system('cls')
-            
-            print(Colorate.Color(Colors.cyan, banner, True))
-            
-            sleep(2)
-        
-            
-        if driver.current_url != 'https://twiends.com/home':
-            driver.get('https://twiends.com/home')
-            if driver.current_url == 'https://twiends.com/home':
-                driver.refresh()
             
 for x in range(35):
     sleep(5)
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[2]/div/div[2]/code').click()
-    sleep(2)
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[3]/div/div[2]/code').click()
-    sleep(2)
+    
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[4]/div/div[2]/code').click()
-    sleep(2)
+    
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[5]/div/div[2]/code').click()
-    sleep(2)
+    
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[6]/div/div[2]/code').click()
-    sleep(2)
+    
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[7]/div/div[2]/code').click()
-    sleep(2)
+    
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[8]/div/div[2]/code').click()
-    sleep(2)
+    
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[9]/div/div[2]/code').click()
-    sleep(2)
+    
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[10]/div/div[2]/code').click()
-    sleep(2)
+    
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[11]/div/div[2]/code').click()
-    sleep(2)
+    
     driver.find_element(By.XPATH, f'//*[@id="NewList"]/div[12]/div/div[2]/code').click()
-    sleep(2)
+    
     
     driver.find_element(By.XPATH, f'//*[@id="Refresh"]').click()
     sleep(5)

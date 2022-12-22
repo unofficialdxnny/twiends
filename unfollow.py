@@ -40,29 +40,21 @@ banner = '''
 
 
 
-try:
-    os.system('cls')
-    config = open('config.json')
-    data = json.load(config)
+os.system('cls')
+config = open('config.json')
+data = json.load(config)
+options = Options()
+options.page_load_strategy = 'eager'
+options.headless = False
+options.add_argument('--disable-blink-features=AutomationControlled')
+options.add_argument('--disable-blink-features=AutomationControlled')
+options.add_experimental_option("detach", True)
+options.add_argument("--log-level=3")
+driver = webdriver.Chrome(executable_path='./WebDriver/chromedriver.exe', options=options, service_args=["--verbose", "--log-path=D:\\qc1.log"]) ## Initialise the driver   
 
+driver.get("https://twitter.com/") ## Login
+## driver.maximize_window()
+wait = WebDriverWait(driver, 100)
+os.system('cls')    
 
-
-    options = Options()
-    options.page_load_strategy = 'eager'
-    options.headless = True
-    options.add_argument('--disable-blink-features=AutomationControlled')
-    options.add_argument('--disable-blink-features=AutomationControlled')
-    options.add_experimental_option("detach", True)
-    options.add_argument("--log-level=3")
-    driver = webdriver.Chrome(executable_path='./WebDriver/chromedriver.exe', options=options, service_args=["--verbose", "--log-path=D:\\qc1.log"]) ## Initialise the driver   
-    
-
-    driver.get("https://twitter.com/") ## Login
-    ## driver.maximize_window()
-    wait = WebDriverWait(driver, 100)
-    os.system('cls')    
-    
-    print(Colorate.Color(Colors.cyan, banner, True))
-    
-except Exception:
-    print('')
+print(Colorate.Color(Colors.cyan, banner, True))
