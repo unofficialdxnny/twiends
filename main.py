@@ -7,6 +7,10 @@ By @unofficialdxnny (Danial Ahmed)
 
 
 NOTE THIS SCRIPT DOESNT WORK AS INTENDED. USE "latest.py" start a UI script.
+
+i dont currently have time to fix this script. if you want you can create a PR and upload the headless edition
+
+The only problem is to fix the login xpath and put into correct places :)
 """
 
 from pystyle import *
