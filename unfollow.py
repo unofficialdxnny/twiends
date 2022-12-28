@@ -6,6 +6,10 @@ get rate limited as a first warning and after that your account will be suspende
 
 Due to this I recommend you to only run this script once a day and unfollow 150-200 people.
 
+use selenium to unfollow everone currently following on twitter
+
+ill probably make it smarter so it only unfollows people you followed using this script or maybe let you choose.
+
 
 """
 
